@@ -1,0 +1,32 @@
+name = "hat-manifest-bot"
+main = "src/index.js"
+compatibility_date = "2026-05-23"
+
+[vars]
+DISCORD_PUBLIC_KEY = "3d073f5be99498a91f0962cb715f56ad8e915bd2e9f58739e3bf6482093ef469"
+DISCORD_APPLICATION_ID = "947389898531430421"
+REQUEST_CHANNEL = "1507608145021632542"
+MOD_LOG_CHANNEL = "1507761568891404308"
+TICKET_LOG_CHANNEL = "1485507520335446147"
+TICKET_CATEGORY_ID = "1485507604049563718"
+DATABASE_1_URL = "https://raw.githubusercontent.com/robsonjalen14-ai/hat-database/main/database-1/"
+DATABASE_2_URL = ""
+DATABASE_BASE_PATHS = ",manifests"
+MANIFEST_PRIMARY_URLS = ""
+MANIFEST_FALLBACK_URLS = ""
+MANIFEST_REPOSITORY_BASE_PATHS = ""
+GITHUB_OWNER = "robsonjalen14-ai"
+GITHUB_REPO = "hat-database"
+GITHUB_BRANCH = "main"
+CHAT_UPLOAD_MAX_BYTES = "95000000"
+
+[[durable_objects.bindings]]
+name = "BOT_STORAGE"
+class_name = "BotStorage"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["BotStorage"]
+
+[triggers]
+crons = ["*/5 * * * *"]
